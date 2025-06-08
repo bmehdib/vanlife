@@ -36,7 +36,7 @@ export default function VansPage() {
           </div>
         </div>
         <div
-          className={`absolute bottom-0 left-9 p-2 text-white rounded-md max-w-20 text-center ${cardColor(
+          className={`absolute bottom-1 left-9 p-2 text-white rounded-md max-w-20 text-center ${cardColor(
             van.type
           )}`}
         >

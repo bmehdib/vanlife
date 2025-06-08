@@ -71,11 +71,11 @@ createServer({
   routes() {
     this.namespace = "api";
 
-    this.get("/vans", (schema, request) => {
+    this.get("/vans", (schema: any, request) => {
       return schema.vans.all();
     });
 
-    this.get("/vans/:id", (schema, request) => {
+    this.get("/vans/:id", (schema: any, request) => {
       const id = request.params.id;
       return schema.vans.find(id);
     });
