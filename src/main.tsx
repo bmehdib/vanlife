@@ -5,9 +5,9 @@ import AboutPage from "./pages/AboutPage";
 import Logo from "../images/logog.png";
 import { Link } from "react-router";
 createRoot(document.getElementById("root")!).render(
-  <section className="h-svh">
+  <section className="h-dvh overflow-x-hidden flex flex-col">
     <BrowserRouter>
-      <header className="bg-orange-50 w-full h-24 p-5 grid items-center">
+      <header className="bg-orange-50 w-full p-5 grid items-center">
         <nav className="flex justify-between">
           <div>
             <Link to="/">

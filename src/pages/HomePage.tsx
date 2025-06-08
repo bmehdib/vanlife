@@ -10,7 +10,9 @@ export default function HomePage() {
             Add adventure to your life by joining the #vanlife movement. Rent
             the perfect van to make your perfect road trip.
           </p>
-          <button className="btn w-3/4 mt-5">Find your van</button>
+          <button className="btn w-3/4 max-w-[25rem] mt-5">
+            Find your van
+          </button>
         </div>
       </main>
     </section>
