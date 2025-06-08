@@ -9,7 +9,8 @@ body {
 }
 .homepage {
   background: url("../images/bg-main.png");
-  height: 25rem;
+  height: 100svh;
+  max-height: 50rem;
   background-size: cover;
   background-position: center;
   position: relative;
