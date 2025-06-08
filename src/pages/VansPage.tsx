@@ -25,10 +25,10 @@ export default function VansPage() {
     return (
       <div
         key={van.id}
-        className="relative w-60 h-60 bg-orange-50 grid justify-center p-2 rounded-xl"
+        className="relative w-60 h-60 bg-orange-50 grid justify-center p-2 py-5 rounded-xl"
       >
-        <img className="w-40" src={van.imageUrl} alt="" />
-        <div className="flex ">
+        <img className="w-40 rounded-xl -mt-2" src={van.imageUrl} alt="" />
+        <div className="flex">
           <p className="font-bold">{van.name}</p>
           <div className="flex flex-col ml-4">
             <p className="font-bold">${van.price}</p>
