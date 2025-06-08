@@ -1,18 +1,27 @@
 import { useEffect, useState } from "react";
 import "../../serverData";
 export default function VansPage() {
-  const [vans, SetVans] = useState([]);
+  const [vans, SetVans] = useState<van[] | null>(null);
+  type van = {
+    id: number;
+    imageUrl: string;
+    price: number;
+    name: string;
+    description: string;
+    type: string;
+  };
   useEffect(() => {
     fetch("api/vans")
       .then((res) => res.json())
       .then((data) => SetVans(data.vans));
   }, []);
-  const vansCard = vans.map((van) => {
+  const vansCard = vans?.map((van: van) => {
     function cardColor(car: any) {
       if (car == "simple") return "bg-orange-400";
       if (car == "rugged") return "bg-blue-400";
       if (car == "luxury") return "bg-black";
     }
+
     return (
       <div
         key={van.id}
