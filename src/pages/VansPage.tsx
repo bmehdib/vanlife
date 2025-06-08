@@ -16,7 +16,7 @@ export default function VansPage() {
       .then((data) => SetVans(data.vans));
   }, []);
   const vansCard = vans?.map((van: van) => {
-    function cardColor(car: any) {
+    function cardColor(car: string) {
       if (car == "simple") return "bg-orange-400";
       if (car == "rugged") return "bg-blue-400";
       if (car == "luxury") return "bg-black";
