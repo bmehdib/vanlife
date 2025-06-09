@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../../serverData";
+import { Link } from "react-router";
 export default function VansPage() {
   const [vans, SetVans] = useState<van[] | null>(null);
   type van = {
@@ -23,26 +24,28 @@ export default function VansPage() {
     }
 
     return (
-      <div
-        key={van.id}
-        className="relative w-80 h-72  bg-orange-50 grid justify-center p-2 py-5 rounded-xl"
-      >
-        <img className="w-40 rounded-xl -mt-2" src={van.imageUrl} alt="" />
-        <div className="flex">
-          <p className="font-bold">{van.name}</p>
-          <div className="flex flex-col ml-4">
-            <p className="font-bold">${van.price}</p>
-            <p className="font-light  -mt-1">/day</p>
+      <Link to={`/vanspage/${van.id}`}>
+        <div
+          key={van.id}
+          className="relative w-80 h-72  bg-orange-50 grid justify-center p-2 py-5 rounded-xl hover:bg-orange-200 transition"
+        >
+          <img className="w-40 rounded-xl -mt-2" src={van.imageUrl} alt="" />
+          <div className="flex">
+            <p className="font-bold">{van.name}</p>
+            <div className="flex flex-col ml-4">
+              <p className="font-bold">${van.price}</p>
+              <p className="font-light  -mt-1">/day</p>
+            </div>
+          </div>
+          <div
+            className={`absolute bottom-6 left-20 p-2 text-white rounded-md max-w-20 text-center ${cardColor(
+              van.type
+            )}`}
+          >
+            {van.type}
           </div>
         </div>
-        <div
-          className={`absolute bottom-6 left-20 p-2 text-white rounded-md max-w-20 text-center ${cardColor(
-            van.type
-          )}`}
-        >
-          {van.type}
-        </div>
-      </div>
+      </Link>
     );
   });
 
@@ -63,7 +66,7 @@ export default function VansPage() {
         </button>
         <p className="border-b-2 cursor-pointer">clear filters</p>
       </div>
-      <main className="grid grid-cols-4 gap-5 mt-5 place-items-center">
+      <main className=" cardsGridProperty gap-5 mt-5 place-items-center">
         {vansCard}
       </main>
     </section>
