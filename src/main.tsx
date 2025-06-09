@@ -5,6 +5,7 @@ import AboutPage from "./pages/AboutPage";
 import VansPage from "./pages/VansPage";
 import Logo from "../images/logog.png";
 import { Link } from "react-router";
+import Van from "./components/Van";
 createRoot(document.getElementById("root")!).render(
   <section className="h-dvh overflow-x-hidden flex flex-col">
     <BrowserRouter>
@@ -25,6 +26,7 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/vanspage" element={<VansPage />} />
+        <Route path="/vanspage/:id" element={<Van />} />
       </Routes>
     </BrowserRouter>
   </section>
