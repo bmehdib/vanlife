@@ -24,11 +24,8 @@ export default function VansPage() {
     }
 
     return (
-      <Link to={`/vanspage/${van.id}`}>
-        <div
-          key={van.id}
-          className="relative w-80 h-72  bg-orange-50 grid justify-center p-2 py-5 rounded-xl hover:bg-orange-200 transition"
-        >
+      <Link key={van.id} to={`/vanspage/${van.id}`}>
+        <div className="relative w-80 h-72  bg-orange-50 grid justify-center p-2 py-5 rounded-xl hover:bg-orange-200 transition">
           <img className="w-40 rounded-xl -mt-2" src={van.imageUrl} alt="" />
           <div className="flex">
             <p className="font-bold">{van.name}</p>
@@ -66,7 +63,7 @@ export default function VansPage() {
         </button>
         <p className="border-b-2 cursor-pointer">clear filters</p>
       </div>
-      <main className=" cardsGridProperty gap-5 mt-5 place-items-center">
+      <main className="cardsGridProperty gap-5 mt-5 place-items-center">
         {vansCard}
       </main>
     </section>
