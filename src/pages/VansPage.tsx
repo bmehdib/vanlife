@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "../../serverData";
-import { Link } from "react-router";
 import VanCard from "./VanCard";
 export default function VansPage() {
   const [vans, SetVans] = useState<van[] | null>(null);
