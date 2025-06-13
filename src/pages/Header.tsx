@@ -10,7 +10,7 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex gap-5 text-lg font-bold text-gray-600">
-          <Link to={"/Host"}>Host</Link>
+          <Link to={"/Host/Dashboard"}>Host</Link>
           <Link to={"/about"}>About</Link>
           <Link to={"/vanspage"}>Vans</Link>
         </div>
