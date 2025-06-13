@@ -1,5 +1,4 @@
 import { Link, Outlet } from "react-router";
-import Dashboard from "../components/Dashboard";
 export default function Host() {
   return (
     <section className="bg-orange-50 w-full p-5 flex flex-col h-full gap-5">

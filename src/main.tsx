@@ -12,13 +12,13 @@ createRoot(document.getElementById("root")!).render(
   <section className="h-dvh overflow-x-hidden flex flex-col">
     <BrowserRouter>
       <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="vanspage" element={<VansPage />} />
           <Route path="vanspage/:id" element={<Van />} />
           <Route path="Host" element={<Host />}>
-            <Route path="/Host" element={<Dashboard />} />
+            <Route index element={<Dashboard />} />
             <Route path="Income" element={<Income />} />
           </Route>
         </Route>
