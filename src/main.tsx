@@ -8,6 +8,7 @@ import Host from "./pages/Host";
 import Van from "./components/Van";
 import Income from "./components/Income";
 import Dashboard from "./components/Dashboard";
+import HostVan from "./components/HostVan";
 createRoot(document.getElementById("root")!).render(
   <section className="h-dvh overflow-x-hidden flex flex-col">
     <BrowserRouter>
@@ -20,6 +21,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="Host" element={<Host />}>
             <Route index element={<Dashboard />} />
             <Route path="Income" element={<Income />} />
+            <Route path="vans" element={<HostVan />} />
           </Route>
         </Route>
       </Routes>

@@ -19,7 +19,7 @@ export default function Host() {
           </NavLink>
           <NavLink
             className={({ isActive }) => (isActive ? "text-orange-400" : "")}
-            to={"Dashboard"}
+            to={"vans"}
           >
             <p>Vans</p>
           </NavLink>
