@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useParams, Link } from "react-router";
-export default function HostVan() {
+import { Link } from "react-router";
+export default function HostVans() {
   const [vans] = useState([
     {
       id: "1",
@@ -33,45 +33,25 @@ export default function HostVan() {
       type: "luxury",
     },
   ]);
-  const param = useParams();
-  const id = Number(param?.id);
-
-  function cardColor(car: string) {
-    if (car == "simple") return "bg-orange-400";
-    if (car == "rugged") return "bg-blue-400";
-    if (car == "luxury") return "bg-black";
-  }
+  const vanItems = vans.map((van) => {
+    return (
+      <Link
+        key={van.id}
+        className="w-full h-24 max-w-96 bg-white p-2 rounded-2xl mx-auto text-right font-bold flex justify-between hover:bg-orange-200"
+        to={van.id}
+      >
+        <img className="w-20 h-20 rounded-xl " src={van.imageUrl} alt="" />
+        <div>
+          <p>{van.name}</p>
+          <p>${van.price}/day</p>
+        </div>
+      </Link>
+    );
+  });
   return (
     <section>
-      <Link to="/Host/vans/">
-        <h2>back to all vans</h2>
-      </Link>
-      {id ? (
-        <main className="bg-white rounded-2xl max-w-[40rem] h-full mt-4">
-          <div className="flex  p-4 ">
-            <img
-              className="max-w-72 rounded-2xl"
-              src={vans[id - 1].imageUrl}
-              alt=""
-            />
-            <div className="w-full text-right">
-              <div
-                className={`p-2 text-white rounded-md max-w-20 text-center ml-auto  ${cardColor(
-                  vans[id - 1].type
-                )}`}
-              >
-                {vans[id - 1].type}
-              </div>
-              <div className="mt-20 ">
-                <p className="text-2xl font-bold">{vans[id - 1].name}</p>
-                <p className="">{vans[id - 1].price}/a Day</p>
-              </div>
-            </div>
-          </div>
-        </main>
-      ) : (
-        <h1>{id}</h1>
-      )}
+      <h2 className="text-center text-2xl font-bold">Your Listed Vans</h2>
+      <main className="flex flex-wrap gap-4 my-4">{vanItems}</main>
     </section>
   );
 }
