@@ -1,21 +1,34 @@
-import { Link, Outlet } from "react-router";
+import { NavLink, Outlet } from "react-router";
 export default function Host() {
   return (
     <section className="bg-orange-50 w-full p-5 flex flex-col h-full gap-5">
       <header className="w-full">
         <nav className="w-full flex justify-center gap-6 text-lg font-bold">
-          <Link to={"/Host"}>
+          <NavLink
+            className={({ isActive }) => (isActive ? "text-orange-400" : "")}
+            to={"/Host"}
+            end
+          >
             <p>Dashboard</p>
-          </Link>
-          <Link to={"/Host/Income"}>
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "text-orange-400" : "")}
+            to={"Income"}
+          >
             <p>Income</p>
-          </Link>
-          <Link to={"/Host/Dashboard"}>
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "text-orange-400" : "")}
+            to={"Dashboard"}
+          >
             <p>Vans</p>
-          </Link>
-          <Link to={"/Host/Dashboard"}>
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "text-orange-400" : "")}
+            to={"Dashboard"}
+          >
             <p>Review</p>
-          </Link>
+          </NavLink>
         </nav>
       </header>
       <Outlet />
